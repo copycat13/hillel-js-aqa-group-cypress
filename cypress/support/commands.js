@@ -1,12 +1,5 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
+//For more comprehensive examples of custom commands please read more here:
 // https://on.cypress.io/custom-commands
-// ***********************************************
 
 Cypress.Commands.add('login', (email, password) => {
   cy.visit('/auth/login', {failOnStatusCode: false,})
@@ -59,4 +52,13 @@ Cypress.Commands.add('editUser', (updatedUser) => {
   cy.get('td input[placeholder="E-mail"]').clear().type(updatedUser.email);
   cy.get('td input[placeholder="Age"]').clear().type(updatedUser.age);
   cy.get('.nb-checkmark').click();
+});
+
+Cypress.Commands.add('registerUser', ({fullName, email, password, repeatPassword}) => {
+  cy.get('#input-name').type(fullName);
+  cy.get('#input-email').type(email);
+  cy.get('#input-password').type(password);
+  cy.get('#input-re-password').type(repeatPassword);
+  cy.get('span[class="custom-checkbox"]').click();
+  cy.get('button').contains('Register', {matchCase: false}).click()
 });

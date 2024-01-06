@@ -1,0 +1,36 @@
+{
+     "validUser": {
+       "fullName": "rikimaru",
+       "email": "just4glip@gmail.com",
+       "password": "Test!123",
+       "repeatPassword": "Test!123"
+     },
+
+     "invalidFullName": {
+          "fullName": "joe",
+          "email": "just4glip@gmail.com",
+          "password": "Test!123",
+          "repeatPassword": "Test!123"
+     },
+
+     "invalidEmail": {
+       "fullName": "rikimaru",
+       "email": "invalidemail",
+       "password": "Test!123",
+       "repeatPassword": "Test!123"
+     },
+
+     "weakPassword": {
+       "fullName": "weakpassword",
+       "email": "weak.password@egmail.com",
+       "password": "tes",
+       "repeatPassword": "tes"
+     },
+
+     "passwordMismatch": {
+      "fullName": "mismatchuser",
+      "email": "mismatch@gmail.com",
+      "password": "Test!123",
+      "repeatPassword": "Test123"
+    }
+   }
