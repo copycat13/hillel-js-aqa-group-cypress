@@ -1,20 +1,38 @@
 {
-  "name": "ithillel-js-aqa-group-cypress",
-  "version": "1.0.0",
-  "main": "cypress.config.js",
-  "description": "",
-  "scripts": {
-    "test": "cypress open",
-    "test:cli": "cypress run",
-    "cy:open": "npx cypress open --e2e --chrome",
-    "cy:env": "Set CYPRESS_PROCESS_ENV=process_env_variable_value && npx cypress open --env cli_env=cli_env_variable_value"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "cypress": "^13.6.1"
-  },
-  "dependencies": {
-    "cypress-mochawesome-reporter": "^3.8.0"
-  }
+	"name": "ithillel-js-aqa-group-cypress",
+	"version": "1.0.0",
+	"main": "cypress.config.js",
+	"description": "",
+	"scripts": {
+		"test": "cypress open",
+		"test:cli": "cypress run",
+		"cy:open": "npx cypress open --e2e --chrome",
+		"cy:env": "Set CYPRESS_PROCESS_ENV=process_env_variable_value && npx cypress open --env cli_env=cli_env_variable_value",
+		"cy:demoqa": "npx cypress open --e2e --browser chrome --config-file cypress.demoqa.config.js",
+		"formatCheck": "prettier . --check",
+		"formatWrite": "prettier . --write",
+		"linter": "npx eslint"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"cypress": "^13.6.1",
+		"eslint": "^8.56.0",
+		"eslint-plugin-cypress": "^2.15.1",
+		"husky": "^8.0.3",
+		"prettier": "3.1.1"
+	},
+	"dependencies": {
+		"cypress-mochawesome-reporter": "^3.8.0"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"cypress/**/*.{js,mjs}": [
+			"eslint"
+		]
+	}
 }
