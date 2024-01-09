@@ -60,5 +60,6 @@ describe('network', () => {
 			expect(resp.body.books[0].title).to.equal('Git Pocket Guide');
 		});
 		cy.pause();
+		cy.wait(1000);
 	});
 });
