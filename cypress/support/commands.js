@@ -2,21 +2,29 @@
 // https://on.cypress.io/custom-commands
 
 Cypress.Commands.add('login', (email, password) => {
+<<<<<<< HEAD
   cy.visit('/auth/login', {failOnStatusCode: false,})
   cy.get('#input-email').type(email)
   cy.get('#input-password').type(password)
   cy.get('span.custom-checkbox').click()
   cy.get('button').contains('Log in', {matchCase: false}).click()
  })
+=======
+  cy.visit('/auth/login', { failOnStatusCode: false });
+  cy.get('#input-email').type(email);
+  cy.get('#input-password').type(password);
+  cy.get('button').contains('Log in', { matchCase: false }).click();
+});
+>>>>>>> 032b0dd (add material for lecture 17)
 
-
- Cypress.Commands.add('init', ()=>{
-  const now = Date.now()
-  const expiredOn = now + 1000000000
-  cy.window().then((win)=> {
+Cypress.Commands.add('init', () => {
+  const now = Date.now();
+  const expiredOn = now + 1000000000;
+  cy.window().then((win) => {
     win.localStorage.setItem('lastExternalReferrerTime', now.toString());
-    win.localStorage.setItem('theme', JSON.stringify({"themeName":"material-light","expires_in":expiredOn}));
+    win.localStorage.setItem('theme', JSON.stringify({ themeName: 'material-light', expires_in: expiredOn }));
     win.localStorage.setItem('lastExternalReferrer', 'empty');
+<<<<<<< HEAD
 
   })
  })
@@ -62,3 +70,7 @@ Cypress.Commands.add('registerUser', ({fullName, email, password, repeatPassword
   cy.get('span[class="custom-checkbox"]').click();
   cy.get('button').contains('Register', {matchCase: false}).click()
 });
+=======
+  });
+});
+>>>>>>> 032b0dd (add material for lecture 17)

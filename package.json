@@ -6,15 +6,48 @@
   "scripts": {
     "test": "cypress open",
     "test:cli": "cypress run",
+<<<<<<< HEAD
     "cy:report": "cypress run --browser chrome --config-file cypress.registration.config.js"
+=======
+    "cy:open": "npx cypress open --e2e --browser chrome",
+    "cy:env": "Set CYPRESS_PROCESS_ENV=process_env_variable_value && npx cypress open --env cli_env=cli_env_variable_value",
+    "cy:demoqa": "npx cypress open --e2e --browser chrome --config-file cypress.demoqa.config.js",
+    "prettier:check": "prettier . --check",
+    "prettier:write": "prettier . --write",
+    "eslint": "npx eslint ./**/*.*js",
+    "precommit": "npm run prettier:write && npm run eslint",
+    "prepare": "husky install"
+>>>>>>> 032b0dd (add material for lecture 17)
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+<<<<<<< HEAD
     "cypress": "^13.6.2",
+=======
+    "cypress": "^13.6.1",
+    "eslint": "^8.56.0",
+    "eslint-plugin-cypress": "^2.15.1",
+    "husky": "^8.0.3",
+>>>>>>> 032b0dd (add material for lecture 17)
     "prettier": "3.1.1"
   },
   "dependencies": {
     "cypress-mochawesome-reporter": "^3.8.0"
+<<<<<<< HEAD
+=======
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "cypress/**/*.{js,mjs}": [
+      "formatWrite",
+      "linter",
+      "git add"
+    ]
+>>>>>>> 032b0dd (add material for lecture 17)
   }
 }
