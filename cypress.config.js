@@ -1,4 +1,4 @@
-const { defineConfig } = require("cypress");
+const { defineConfig } = require('cypress');
 
 module.exports = defineConfig({
   reporter: 'cypress-mochawesome-reporter',
@@ -9,7 +9,7 @@ module.exports = defineConfig({
     specPattern: 'cypress/e2e/**/*.cy.{js,jsx,ts,tsx,mjs}',
     baseUrl: 'https://www.akveo.com/ngx-admin/',
     watchForFileChanges: false,
-    setupNodeEvents(on, config) {
+    setupNodeEvents(on) {
       require('cypress-mochawesome-reporter/plugin')(on);
     },
   },
