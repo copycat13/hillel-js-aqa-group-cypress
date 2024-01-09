@@ -28,14 +28,26 @@ const booksResponse = {
 };
 
 describe('network', () => {
-	it('can stub server responces', () => {
+	it('can stub server responces with object', () => {
+		cy.intercept('GET', '/BookStore/v1/Books', booksResponse).as('getBooks');
+		cy.visit('/books');
+	});
+
+	it('can stub server responces with fixture', () => {
 		cy.intercept('GET', '/BookStore/v1/Books', {
 			fixture: 'api/books.json',
 		}).as('getBooks');
 		cy.visit('/books');
 	});
 
-	it.only('can send requests', () => {
+	it('can stub server responces with callback', () => {
+		cy.intercept('GET', '/BookStore/v1/Books', {
+			fixture: 'api/books.json',
+		}).as('getBooks');
+		cy.visit('/books');
+	});
+
+	it('can send requests and check them', () => {
 		cy.request('GET', '/BookStore/v1/Books').its('status').should('eq', 200);
 		cy.request({
 			url: '/BookStore/v1/Books',
@@ -47,7 +59,5 @@ describe('network', () => {
 			expect(resp.body.books.length).to.equal(8);
 			expect(resp.body.books[0].title).to.equal('Git Pocket Guide');
 		});
-		cy.pause();
-		cy.wait(1000);
 	});
 });
