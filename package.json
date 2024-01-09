@@ -32,7 +32,9 @@
 	},
 	"lint-staged": {
 		"cypress/**/*.{js,mjs}": [
-			"eslint"
+			"formatWrite",
+			"linter",
+			"git add"
 		]
 	}
 }

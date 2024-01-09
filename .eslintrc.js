@@ -20,7 +20,5 @@ module.exports = {
 		sourceType: 'module',
 	},
 	plugins: ['cypress'],
-	rules: {
-		'no-unused-vars': 'off',
-	},
+	rules: {},
 };
