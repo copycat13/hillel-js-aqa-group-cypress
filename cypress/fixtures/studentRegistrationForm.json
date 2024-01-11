@@ -1,0 +1,21 @@
+{
+  "validUser": {
+    "firstName": "Riki",
+    "lastName": "Maru",
+    "email": "just4glip@gmail.com",
+    "mobileNumber": "1313131313",
+    "birthDate": "1990-08-31",
+    "subject": "Math",
+    "address": "123 Main St, Cityville"
+  },
+
+  "invalidEmail": {
+    "firstName": "Riki",
+    "lastName": "Maru",
+    "email": "just4glip",
+    "mobileNumber": "1313",
+    "birthDate": "1990-08-31",
+    "subject": "Math",
+    "address": "123 Main St, Cityville"
+  }
+}
